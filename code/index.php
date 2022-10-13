@@ -49,4 +49,16 @@ function task12()
 	echo 8**2;
 }
 
-task12();
+function task13()
+{
+	$my_num = 15;
+	$answer = $my_num;
+	$answer += 2;
+	$answer *= 2;
+	$answer -= 2;
+	$answer /= 2;
+	$answer -= $my_num;
+	echo $answer;
+}
+
+task13();
