@@ -32,4 +32,16 @@ function task2()
 	echo $last_month - $this_month;
 }
 
-task2();
+function task11()
+{
+	$num_languages = 4;
+	$months = 11;
+
+	$days = $months * 16;
+
+	$days_per_language = $days / $num_languages;
+
+	echo $days_per_language;
+}
+
+task11();
