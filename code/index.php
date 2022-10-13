@@ -161,4 +161,57 @@ function task15()
 	echo $my_num;
 }
 
-task15();
+function task16()
+{
+	function increaseEnthusiasm(string $str): string
+	{
+		return $str . "!";
+	}
+
+	echo increaseEnthusiasm("wow") . "<br/>";
+
+	function repeatThreeTimes(string $str): string
+	{
+		return $str . $str . $str;
+	}
+
+	echo repeatThreeTimes("echo") . "<br/>";
+
+
+	function cut(string $str, int $n = 10): string
+	{
+		return substr($str,0,$n);
+	}
+
+	echo cut("word", 2) . "<br/>";
+
+
+	function printArr(array $arr)
+	{
+		if (count($arr) == 0){
+			return;
+		}
+		echo array_shift($arr) . " ";
+		printArr($arr);
+	}
+
+	$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	printArr($arr);
+	echo "<br/>";
+
+
+	function sumDigits9(int $number)
+	{
+		if ($number <= 9){
+			return;
+		}
+		$number = array_sum(str_split($number));
+		echo $number . " ";
+		sumDigits9($number);
+	}
+
+	$number = 1984856;
+	sumDigits9($number);
+}
+
+task16();
