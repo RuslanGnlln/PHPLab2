@@ -61,4 +61,93 @@ function task13()
 	echo $answer;
 }
 
-task13();
+function task14()
+{
+	// работа с %
+	$a = 10;
+	$b = 3;
+	echo $a % $b . "<br/>";
+
+	if ($a % $b > 0)
+		echo "Делится с остатком " . $a % $b;
+	else
+		echo "Делится";
+	echo "<br/>";
+
+	// Работа со степенью и корнем
+	$st = pow(2,10);
+	echo $st . "<br/>";
+
+	echo sqrt(245) . "<br/>";
+
+	$arr = [4, 2, 5, 19, 13, 0, 10];
+	$sum = 0;
+	foreach ($arr as &$value){
+		$sum += pow($value, 2);
+	}
+	echo sqrt($sum) . "<br/>";
+
+	// Работа с функциями округления
+	echo round(sqrt(379)) . "<br/>";
+	echo round(sqrt(379), 1) . "<br/>";
+	echo round(sqrt(379), 2) . "<br/>";
+
+	$floorCeilArr = array("floor" => floor(sqrt(587)), "ceil" => ceil(sqrt(587)));
+	echo $floorCeilArr["floor"] . " " . $floorCeilArr["ceil"] . "<br/>";
+
+	// Работа с min max
+	$minMaxArr = [4, -2, 5, 19, -130, 0, 10];
+	echo min($minMaxArr) . " " . max($minMaxArr) . "<br/>";
+
+	// Работа с рандомом
+	echo rand(1,100) . "<br/>";
+
+	$randomArr = [];
+	for ($i = 0; $i < 10; $i++) {
+		$randomArr[$i] = rand(1,10);
+	}
+	for ($i = 0; $i < 10; $i++) {
+		echo $randomArr[$i] . ' ';
+	}
+	echo "<br/>";
+
+	// Работа с модулем
+	$a = 8;
+	$b = 17;
+	echo abs($a-$b) . "<br/>";
+
+	$absArray = [1, 2, -1, -2, 3, -3];
+	for ($i = 0; $i < 6; $i++) {
+		$absArray[$i] = abs($absArray[$i]);
+	}
+	for ($i = 0; $i < 6; $i++) {
+		echo $absArray[$i] . ' ';
+	}
+	echo "<br/>";
+
+	// Общее
+	$number = 78;
+	$divider = 1;
+	$dividerArr = [];
+	while ($divider <= $number){
+		if ($number % $divider == 0)
+			$dividerArr[] = $divider;
+		$divider += 1;
+	}
+	for ($i = 0; $i < count($dividerArr); $i++){
+		echo $dividerArr[$i] . ' ';
+	}
+	echo "<br/>";
+
+	$sumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	$sum = 0;
+	for ($i = 0; $i < count($sumArr); $i++){
+		$sum += $sumArr[$i];
+		if ($sum > 10){
+			echo $i+1 . "<br/>";
+			break;
+		}
+	}
+}
+
+task14();
