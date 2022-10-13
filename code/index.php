@@ -150,4 +150,15 @@ function task14()
 	}
 }
 
-task14();
+function task15()
+{
+	function printStringReturnNumber(): int
+	{
+		echo "string" . "<br/>";
+		return 8;
+	}
+	$my_num = printStringReturnNumber();
+	echo $my_num;
+}
+
+task15();
