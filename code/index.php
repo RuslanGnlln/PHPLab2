@@ -44,4 +44,9 @@ function task11()
 	echo $days_per_language;
 }
 
-task11();
+function task12()
+{
+	echo 8**2;
+}
+
+task12();
