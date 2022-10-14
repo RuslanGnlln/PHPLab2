@@ -308,7 +308,7 @@ function task18()
 	echo isEqual(5,5) . "<br/>";
 
 	$test = 0;
-	echo ((!$test)? 'верно' : 'не верно') . "<br/>";
+	echo ((!$test)? 'верно' : 'неверно') . "<br/>";
 
 	$age = rand(1, 110);
 	echo "age = " . $age . "<br/>";
@@ -331,4 +331,50 @@ function task18()
 	}
 }
 
-task18();
+function task19()
+{
+	$n = 20;
+	for ($i = 1; $i <= $n; $i++){
+		for ($j = 1; $j <= $i; $j++){
+			echo 'x';
+		}
+		echo "<br/>";
+	}
+}
+
+function task20()
+{
+	$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	echo array_sum($arr)/count($arr) . "<br/>";
+
+	function sum100(int $i): int
+	{
+		if ($i <= 100){
+			return $i + sum100($i + 1);
+		}
+		return 0;
+	}
+
+	echo sum100(1) . "<br/>";
+
+	$sqrtArr = array_map('sqrt', $arr);
+	for($i = 0; $i < count($sqrtArr); $i++){
+		echo $sqrtArr[$i] . ' ';
+	}
+	echo "<br/>";
+
+	$index = range('a', 'z');
+	$index = array_flip($index);
+	function plusOne(int $a): int
+	{
+		return $a + 1;
+	}
+	$index = array_map('plusOne', $index);
+	print_r($index);
+	echo "<br/>";
+
+	$str = '1234567890';
+	echo array_sum(str_split($str, 2));
+}
+
+task20();
