@@ -283,4 +283,52 @@ function task17()
 	echo prev($arr);
 }
 
-task17();
+function task18()
+{
+	function moreThan10(int $a, int $b): bool
+	{
+		if ($a + $b > 10){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	echo moreThan10(5,3) . "<br/>";
+
+	function isEqual(int $a, int $b): bool
+	{
+		if ($a == $b){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	echo isEqual(5,5) . "<br/>";
+
+	$test = 0;
+	echo ((!$test)? 'верно' : 'не верно') . "<br/>";
+
+	$age = rand(1, 110);
+	echo "age = " . $age . "<br/>";
+	if ($age < 10){
+		echo "age" . " < 10" . "<br/>";
+	} else if ($age > 99){
+		echo "age" . " > 99" . "<br/>";
+	} else {
+		$digitsSum = array_sum(str_split($age));
+		if ($digitsSum <= 9){
+			echo "сумма цифр однозначна" . "<br/>";
+		} else {
+			echo "сумма цифр двузначна" . "<br/>";
+		}
+	}
+
+	$arr = [1, 2, 3];
+	if (count($arr) == 3){
+		echo array_sum($arr);
+	}
+}
+
+task18();
