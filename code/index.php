@@ -202,11 +202,11 @@ function task16()
 
 	function sumDigits9(int $number)
 	{
+		echo $number . " ";
 		if ($number <= 9){
 			return;
 		}
 		$number = array_sum(str_split($number));
-		echo $number . " ";
 		sumDigits9($number);
 	}
 
@@ -214,4 +214,73 @@ function task16()
 	sumDigits9($number);
 }
 
-task16();
+function task17()
+{
+	$arrX = [];
+	$count = 10;
+	$n = 1;
+	for ($i = 0; $i < $count; $i++){
+		$arrX[$i] = "";
+		for ($j = 0; $j < $n; $j++){
+			$arrX[$i] .= "x";
+		}
+		$n++;
+	}
+	for ($i = 0; $i < $count; $i++){
+		echo $arrX[$i] . " ";
+	}
+	echo "<br/>";
+
+	function arrayFill(string $str, int $n): array
+	{
+		$arr = [];
+		for ($i = 0; $i < $n; $i++){
+			$arr[$i] = $str;
+		}
+		return $arr;
+	}
+
+	$filledArr = arrayFill('y', 5);
+	for ($i = 0; $i < count($filledArr); $i++){
+		echo $filledArr[$i] . " ";
+	}
+	echo "<br/>";
+
+	$sumArr = [[1, 2, 3], [4, 5], [6]];
+	$sum = 0;
+	for ($i = 0; $i < count($sumArr); $i++){
+		$sum += array_sum($sumArr[$i]);
+	}
+	echo $sum . "<br/>";
+
+	$loopArr = [];
+	for($i = 0; $i < 3; $i++){
+		for($j = 0; $j < 3; $j++){
+			$loopArr[$i][$j] = $i * 3 + $j + 1;
+		}
+	}
+	for($i = 0; $i < 3; $i++){
+		for($j = 0; $j < 3; $j++){
+			echo $loopArr[$i][$j] . " ";
+		}
+		echo "<br/>";
+	}
+
+	$givenArr = [2, 5, 3, 9];
+	$result = $givenArr[0] * $givenArr[1] + $givenArr[2] * $givenArr[3];
+	echo $result . "<br/>";
+
+	$user = ['name' => 'Joseph', 'surname' => 'Stalin', 'patronymic' => 'Vissarionovich'];
+	echo $user['surname'] . ' ' . $user['name'] . ' ' . $user['patronymic'] . "<br/>";
+
+	$date = ['year' => 2022, 'month' => 10, 'day' => 14];
+	echo $date['year'] . '-' . $date['month'] . '-' . $date['day'] . "<br/>";
+
+	$arr = ['a', 'b', 'c', 'd', 'e'];
+	echo count($arr) . "<br/>";
+
+	echo end($arr) . "<br/>";
+	echo prev($arr);
+}
+
+task17();
